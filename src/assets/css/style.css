@@ -38,6 +38,10 @@
 	margin-left:-33px;
 	bottom:10px;
 }
+.home{
+	    height: 100%;
+   background-color: #f5f8fa;
+}
 .s-titl{
 	height: 20px;
 	border-bottom:1px solid #c6c8cb;
@@ -60,13 +64,15 @@
 	margin:50px 0 0 20px;
 	float: left;
 	position: relative;
+    -webkit-box-shadow: 0px 2px 12px 2px #edf1f5;
+    -moz-box-shadow: 0px 2px 12px 2px #edf1f5;
+    box-shadow: 0px 2px 12px 2px #edf1f5;
 }
 .s1-text{
 	padding:0 10px;
 	background:#fff;
 }
 .s1-pic{
-	height: 200px;
 	position: relative;
 	background: #c3c0c0;
 }
@@ -85,19 +91,22 @@
 	line-height:50px;
 }
 .s1-online{
-	padding:3px;
-	background:#333;
-	position: absolute;
-	right:0;
-	top:0;
+	height: 24px;
+    padding: 0 2px;
+    background: #333;
+    position: absolute;
+    right: 0;
+    top: 0;
 }
 .s1-online .iconfont{
 	color:#fff;
 	font-size:16px;
 }
 .s1-num{
-	font-size:14px;
-	color:#ab9292;
+    font-size: 14px;
+    color: #ab9292;
+    line-height: 24px;
+    margin-left: 2px;
 }
 .s-btn{
 	width:150px;
@@ -132,13 +141,23 @@
 .s2-item{
 	width:190px;
 	background:#ccc;
-	padding:140px 10px 10px;
 	float: left;
 	margin:30px 0 0 40px;
+	position:relative;
 }
 .s2-item a{
 	width:100%;
 	height: 100%;
+}
+.s2-botText{
+	width:100%;
+	position: absolute;
+	left:0;
+	bottom:0;
+	padding: 0 10px 10px;
+}
+.tstar{
+	padding: 4px 0;
 }
 .tname{
 	font-size:16px;
@@ -147,10 +166,12 @@
 }
 .tscore{
 	text-align:right;
+	color:#fff;
 }
 .s3-ct{
 	background: #fff;
 	box-shadow: 0px 2px 12px 2px #edf1f5;
+	margin-bottom:50px;
 }
 .s-tbox{
 	border-bottom: 1px solid #eee;
@@ -212,6 +233,7 @@
 }
 .s3-new{
 	margin-top:10px;
+	    border: 1px solid #eee;
 }
 .s3-date{
 	width: 68px;
@@ -219,6 +241,10 @@
 	background: #6f7378;
 	border-radius:5px;
 	padding:0 5px;
+}
+.s3-hr{
+    height: 0;
+    border-color: rgba(255, 255, 255, 0.4);
 }
 .s3-date p{
 	font-size:16px;
@@ -237,11 +263,16 @@
 }
 .s3-text h3{
 	line-height:40px;
+	font-size:16px;
+	color:#333;
 }
 .s3-text p{
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+      color: #999;
+      font-size: 12px;
+          line-height: 24px;
 }
 .s3-div{
 	padding:30px 10px;

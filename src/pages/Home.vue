@@ -17,6 +17,7 @@
         <li class="s1-item" v-for="(courseItem,index) in curObject.courseList" v-if = "index < 4">
          <router-link :to="{name:'CourseDetail',params:{id:courseItem.id}}">
            <div class="s1-pic">
+             <img :src="courseItem.imgUrl" alt="">
              <div class="s1-online">
               <span class="iconfont icon-gerenyonghutouxiang2 fl"></span>
               <span class="s1-num fr">{{courseItem.num}}</span>
@@ -24,7 +25,12 @@
             </div>
             <div class="s1-text clearfix">
               <p class="s1-cname fl">{{courseItem.title}}</p>
-              <p class="s1-cprice fr">￥{{courseItem.price}}</p>
+              <template v-if="courseItem.price=='免费'">
+                <p class="s1-cprice fr">{{courseItem.price}}</p>
+              </template>
+              <template v-else>
+                <p class="s1-cprice fr">￥{{courseItem.price}}</p>
+              </template>
             </div>
             <div class="hrline"></div>
          </router-link>
@@ -40,10 +46,15 @@
       <ul class="s2-items clearfix">
         <li class="s2-item" v-for="(teacherItem,index) in curObject.teacherList" v-if="index < 5">
          <router-link :to="{name:'TeacherDetail',params:{id:teacherItem.id}}">
-          <p class="tname">{{teacherItem.name}}</p>
-          <p class="tscore">{{teacherItem.score}}分</p>
-          <div class="tstar">
-            <Score :size="24" :score="teacherItem.score"></Score>
+          <img :src="teacherItem.imgUrl">
+          <div class="s2-botText">
+              <p class="tname">{{teacherItem.name}}</p>
+              <div clearfix>
+                <div class="tstar fl">
+                  <Score :size="24" :score="teacherItem.score"></Score>
+                </div>
+                <p class="tscore fr">{{teacherItem.score}}分</p>
+              </div>
           </div>
          </router-link>
         </li>
@@ -72,7 +83,9 @@
             <li class="s3-new clearfix" v-for="(newsItem,index) in curObject.bulletinList" v-if="index<4">
               <router-link :to="{name:'NewsDetail',params:{id:newsItem.id}}">
                 <div class="s3-date fl">
-                  <p class="s3-date">{{newsItem.date}}</p>
+                  <p class="s3-date1">{{newsItem.date}}</p>
+                  <hr class="s3-hr">
+                  <p class="s3-date2">{{newsItem.year}}</p>
                 </div>
                 <div class="s3-text fr">
                   <h3>{{newsItem.title}}</h3>
@@ -101,9 +114,9 @@ export default {
       msg: 'Welcome to Your Vue.js App',
       curObject:falseData,
       banItems:[
-        {imgUrl:'static/images/pc_01.jpg'},
-        {imgUrl:'static/images/pc_01.jpg'},
-        {imgUrl:'static/images/pc_01.jpg'}
+        {imgUrl:require('../assets/images/ban01.png')},
+        {imgUrl:require('../assets/images/ban02.png')},
+        {imgUrl:require('../assets/images/ban03.png')}
         ],
       swiperOption1: {
         // autoplay: 3000,
@@ -118,9 +131,18 @@ export default {
         paginationClickable :true
       },
       swiperItems:[
-        {imgUrl:'static/images/pc_02.jpg',text:'消防工程师等13项资格证同职称！'},
-        {imgUrl:'static/images/pc_02.jpg',text:'消防工程师等13项资格证同职称！'},
-        {imgUrl:'static/images/pc_02.jpg',text:'消防工程师等13项资格证同职称！'}
+        {
+          imgUrl:"static/images/pc_15.jpg",
+          text:'政策解读 | 消防执法改革，市场是否不...'
+        },
+        {
+          imgUrl:"static/images/pc_16.png",
+          text:'成绩查询后，这些事情你需要了解一下！'
+        },
+        {
+          imgUrl:"static/images/pc_17.jpg",
+          text:'全国齐出击，高层建筑火灾严控成社会热点'
+        }
       ]
     }
   },

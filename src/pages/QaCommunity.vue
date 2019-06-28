@@ -24,7 +24,9 @@
        <ul class="qa-floors">
          <li class="qa-floor clearfix">
             <div class="qa-personal fl">
-               <div class="qa-portrait"></div>
+               <div class="qa-portrait">
+                 <img src="static/images/pc_10.jpg" alt="">
+               </div>
                <p class="qa-uname">163*****289</p>
             </div>
             <div class="qa-text fl">
@@ -40,7 +42,9 @@
          </li>
          <li class="qa-floor clearfix">
             <div class="qa-personal fl">
-               <div class="qa-portrait"></div>
+               <div class="qa-portrait">
+                 <img src="static/images/pc_11.png" alt="">
+               </div>
                <p class="qa-uname">163*****289</p>
             </div>
             <div class="qa-text fl">
@@ -68,17 +72,11 @@
     <div class="qa-relevant">
        <h2>相关课程</h2>
        <ul class="qa-rcourses">
-         <li class="qa-rcourse clearfix">
-           <div class="qa-rpic fl"></div>
-           <div class="qa-rtext fl">2018年一级双师护航班</div>
-         </li>
-         <li class="qa-rcourse clearfix">
-           <div class="qa-rpic fl"></div>
-           <div class="qa-rtext fl">2018年一级双师护航班</div>
-         </li>
-         <li class="qa-rcourse clearfix">
-           <div class="qa-rpic fl"></div>
-           <div class="qa-rtext fl">2018年一级双师护航班</div>
+         <li class="qa-rcourse clearfix" v-for="item in courseItems">
+           <div class="qa-rpic fl">
+             <img :src="item.imgUrl" alt="">
+           </div>
+           <div class="qa-rtext fl">{{item.title}}</div>
          </li>
        </ul>
     </div>
@@ -88,12 +86,14 @@
 </template>
 
 <script>
+import falseData from '../../data.json'
 import Slidebar from '../components/Slidebar'
 export default {
   name:'QaCommunity',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Welcome to Your Vue.js App',
+      courseItems:falseData.courseList,
     }
   },
  components: {
@@ -184,6 +184,7 @@ export default {
   margin:0 auto;
   border-radius:50%;
   background:#ccc;
+  overflow: hidden;
 }
 .qa-uname{
  font-size:12px;

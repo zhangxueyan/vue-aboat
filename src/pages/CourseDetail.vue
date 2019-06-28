@@ -8,10 +8,12 @@
       	 <span class="crumbs-last">{{curObject.title}}</span>
       </div>
       <div class="course-box clearfix">
-      	 <div class="course-pic fl"></div>
+      	 <div class="course-pic fl">
+           <img :src="curObject.imgUrl"> 
+         </div>
       	 <div class="course-brief fl">
       	     <div class="course-titl">
-      	    	<h2>{{curObject.title}}</h2>
+      	    	<h2>{{curObject.title}}({{curObject.teacher}})</h2>
       	    	<div class="course-codebox">
       	    	 <i class="iconfont icon-erweima1"></i>
       	    	 <div class="course-codeimg">
@@ -176,7 +178,6 @@ export default {
 }
 .course-pic{
 	width:370px;
-	height: 220px;
 	background:#ccc;
 }
 .pur-btn{

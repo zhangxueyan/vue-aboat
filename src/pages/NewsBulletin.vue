@@ -3,26 +3,26 @@
   <div class="container">
      <div class="bulletin-imgTexts clearfix">
         <div class="bulletin-imgText1 fl">
-          <img src="static/images/pc_02.jpg">
-          <p class="bulletin-text">消防工程师等13项资格证效力直接等同职称！</p>
+          <img src="static/images/pc_20.jpg">
+          <p class="bulletin-text">政策解读|消防执法改革，市场是否不再需要注册消防工程师？NO！</p>
         </div>
         <div class="bulletin-imgText2 fl">
            <div class="bulletin-imgText2-1">
-              <img src="static/images/pc_02.jpg">
-              <p class="bulletin-text">消防工程师等13项资格证效力直接等同职称！</p>
+              <img src="static/images/pc_21.jpg">
+              <p class="bulletin-text">2019一只船教育首届学员线下沙龙交流会在北京顺利举行</p>
            </div>
            <div class="bulletin-imgText2-1 mt-30">
-              <img src="static/images/pc_02.jpg">
-              <p class="bulletin-text">消防工程师等13项资格证效力直接等同职称！</p>
+              <img src="static/images/pc_23.jpg">
+              <p class="bulletin-text">2018一消考试人数近90万人，突破历史新高</p>
            </div>   
         </div>
         <div class="bulletin-imgText2 fr">
            <div class="bulletin-imgText2-1">
-              <img src="static/images/pc_02.jpg">
-              <p class="bulletin-text">消防工程师等13项资格证效力直接等同职称！</p>
+              <img src="static/images/pc_22.png">
+              <p class="bulletin-text">政策解读 | 新《消防法》出台，这些条例和考点可能都与你有关</p>
            </div>
            <div class="bulletin-imgText2-1 mt-30">
-              <img src="static/images/pc_02.jpg">
+              <img src="static/images/pc_24.jpg">
               <p class="bulletin-text">消防工程师等13项资格证效力直接等同职称！</p>
            </div>   
         </div>
@@ -31,18 +31,18 @@
          <div class="bulletin-left">
            <h2 class="bulletin-titl">最新文章</h2>
            <ul class="bulletin-list">
-             <li class="bulletin-item" v-for="bulletinItem in curObject.bulletinList">
-              <router-link :to="{name:'NewsDetail',params:{id:bulletinItem.id}}">
-                 <h3>{{bulletinItem.title}}</h3>
+             <li class="bulletin-item" v-for="item in curObject.bulletinList">
+              <router-link :to="{name:'NewsDetail',params:{id:item.id}}">
+                 <h3>{{item.title}}</h3>
                  <div class="bulletin-item-div clearfix">
                    <div class="bulletin-item-pic">
-                    <img src="static/images/pc_02.jpg">
+                    <img :src="item.imgUrl">
                   </div>
-                  <p class="bulletin-item-text">{{bulletinItem.text}}</p>
+                  <p class="bulletin-item-text">{{item.text}}</p>
                 </div>
                 <p class="bulletin-item-sundry">
-                  <i>{{bulletinItem.date}}</i>
-                  <i class="iconfont icon-yanjing"></i>{{bulletinItem.count}}
+                  <i>{{item.date}}</i>
+                  <i class="iconfont icon-yanjing"></i>{{item.count}}
                   <i class="iconfont icon-lishijilu"></i>历史记录
                 </p>
               </router-link>
@@ -54,12 +54,14 @@
             <h2 class="bulletin-titl">热门文章</h2>
             <ul class="hot-list">
               <li class="hot-item" v-for="item in curObject.bulletinHot">
-                 <p class="bulletin-hot-text">{{item.title}}</p>
-                 <p class="bulletin-item-sundry">
-                  <i>{{item.date}}</i>
-                  <i class="iconfont icon-yanjing"></i>{{item.num}}
-                  <i class="iconfont icon-lishijilu"></i>历史记录
-                 </p>
+                <router-link :to="{name:'NewsDetail',params:{id:item.id}}">
+                   <p class="bulletin-hot-text">{{item.title}}</p>
+                   <p class="bulletin-item-sundry">
+                    <i>{{item.date}}</i>
+                    <i class="iconfont icon-yanjing"></i>{{item.count}}
+                    <i class="iconfont icon-lishijilu"></i>历史记录
+                   </p>
+                </router-link>
               </li>
             </ul>
          </div>
@@ -109,6 +111,9 @@ export default {
 <style scoped>
 .bulletin-imgTexts{
   margin-top:20px;
+}
+.bulletin-imgTexts img{
+  height: 100%;
 }
 .bulletin-imgText1{
   width:580px;
@@ -168,6 +173,9 @@ export default {
   height:120px;
   overflow: hidden;
   float: left;
+}
+.bulletin-item-pic img{
+  height:100%;
 }
 .bulletin-item-text{
   width: 560px;

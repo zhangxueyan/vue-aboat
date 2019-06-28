@@ -6,21 +6,23 @@
        <h2 class="news-dtitle">{{curObject.title}}</h2>
        <p class="bulletin-item-sundry">
         <i>{{curObject.date}}</i>
-        <i class="iconfont icon-yanjing"></i>{{curObject.num}}
+        <i class="iconfont icon-yanjing"></i>{{curObject.count}}
         <i class="iconfont icon-lishijilu"></i>历史记录
        </p>
-       <p class="news-dtext">{{curObject.text}}</p>
+       <p class="news-dtext">{{curObject.text}}{{curObject.text}}{{curObject.text}}</p>
      </div>
      <div class="bulletin-rigt">
             <h2 class="bulletin-titl">热门文章</h2>
             <ul class="hot-list">
               <li class="hot-item" v-for="item in othObject.bulletinHot">
+                <router-link :to="{name:'NewsDetail',params:{id:item.id}}">
                  <p class="bulletin-hot-text">{{item.title}}</p>
                  <p class="bulletin-item-sundry">
                   <i>{{item.date}}</i>
-                  <i class="iconfont icon-yanjing"></i>{{item.num}}
+                  <i class="iconfont icon-yanjing"></i>{{item.count}}
                   <i class="iconfont icon-lishijilu"></i>历史记录
                  </p>
+               </router-link>
               </li>
             </ul>
      </div>
@@ -64,7 +66,11 @@ export default {
   padding:20px 0;
 }
 .news-dtitle{
-  font-size:26px;
+    font-size: 36px;
+    color: #14191e;
+    line-height: 56px;
+    margin-top: -7px;
+    word-break: break-all;
 }
 .bulletin-item-sundry{
   font-size: 14px;

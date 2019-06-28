@@ -10,15 +10,23 @@ import TeacherDetail from '@/pages/TeacherDetail'
 import NewsBulletin from '@/pages/NewsBulletin'
 import NewsDetail from '@/pages/NewsDetail'
 import OpenClass from '@/pages/OpenClass'
+
+import Index from '@/pages/Index'
 Vue.use(Router)
 
 
 //组件文件名和 组件名 都是首字母大写  name是驼峰
 export default new Router({
+  // mode:'history',
   routes: [
     {
       path: '/',
       redirect:'/Home'
+    },
+    {
+      path: '/Index',
+      name:'Index',
+      component: Index,
     },
     {
       path: '/Home',
