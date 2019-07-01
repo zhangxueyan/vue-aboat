@@ -31,10 +31,6 @@ import Vuelidate from 'vuelidate'
 Vue.use(Vuelidate)
 
 
-import LazyRender from 'vue-lazy-render'
-Vue.use(LazyRender)
-
-
 import VueLazyload from 'vue-lazyload'
  
 // or with options

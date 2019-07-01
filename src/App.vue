@@ -1,10 +1,8 @@
 <template>
   <div id="app">
     <appNav></appNav>
-    <!-- <keep-alive> -->
-      <router-view/>
-<!--     </keep-alive> -->
-    <!-- <appFooter></appFooter> -->
+    <router-view/>
+    <appFooter></appFooter>
   </div>
 </template>
 

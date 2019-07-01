@@ -2,7 +2,7 @@
   <div class="foot-full">
       <div class="container clearfix">
          <div class="fot-div1 fl">
-           <h2>上海新康教育</h2>
+           <h2>北京一只船教育</h2>
            <p>Copyright@2018   北京一只船教育科技有限公司　版权所有</p>
            <p>京ICP备16016526号-1 | 增值电信业务经营许可证：京B2-20180127 | 京网<br>文〔2018〕3080-294号</p>
          </div>

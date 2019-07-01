@@ -107,12 +107,15 @@ import { swiper, swiperSlide } from 'vue-awesome-swiper'
 import Score from '../components/Score'
 import Slidebar from '../components/Slidebar'
 import falseData from '../../data.json'
+
+import { apiAddress } from '@/request/api';// 导入我们的api接口
+
 export default {
   name:'Home',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App',
-      curObject:falseData,
+      curObject:'',
       banItems:[
         {imgUrl:require('../assets/images/ban01.png')},
         {imgUrl:require('../assets/images/ban02.png')},
@@ -147,8 +150,12 @@ export default {
     }
   },
  created(){
-   console.log(this)
+    apiAddress().then(res => {
+      console.log(res,"我是vue请求的数据");
+      this.curObject = res
+    })
  },
+
  components: {
     swiper,
     swiperSlide,
